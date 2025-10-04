@@ -1,10 +1,8 @@
-/* src/pages/Landing/Landing.module.css */
 .container {
   min-height: 100vh;
   background-color: white;
 }
 
-/* Header */
 .header {
   background: white;
   border-bottom: 1px solid var(--gray-200);
@@ -70,7 +68,6 @@
   background-color: var(--primary-700);
 }
 
-/* Hero Section */
 .hero {
   background: linear-gradient(
     135deg,
@@ -145,7 +142,6 @@
   background-color: var(--gray-50);
 }
 
-/* Features Section */
 .features {
   padding: 5rem 0;
   background: white;
@@ -210,7 +206,6 @@
   line-height: 1.6;
 }
 
-/* Pricing Section */
 .pricing {
   padding: 5rem 0;
   background-color: var(--gray-50);
@@ -323,7 +318,6 @@
   background-color: var(--gray-200);
 }
 
-/* CTA Section */
 .cta {
   padding: 5rem 0;
   background-color: var(--primary-600);
@@ -364,7 +358,6 @@
   background-color: var(--gray-100);
 }
 
-/* Footer */
 .footer {
   background-color: var(--gray-900);
   color: white;
@@ -388,7 +381,6 @@
   color: var(--gray-400);
 }
 
-/* Responsive Design */
 @media (min-width: 768px) {
   .nav {
     display: flex;

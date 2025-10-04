@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
-import { apiService } from "../services/apiService";
+import { apiService } from "@/services/apiService";
 
 const ApiContext = createContext();
 

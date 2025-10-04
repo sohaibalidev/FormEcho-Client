@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { Sun, Moon } from "lucide-react";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "./Auth.module.css";
 
 const loadGoogleScript = () => {

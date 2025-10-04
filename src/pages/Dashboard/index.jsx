@@ -1,10 +1,9 @@
-// src/pages/Dashboard/index.jsx
 import React, { useEffect, useState } from "react";
-import { useApi } from "../../contexts/ApiContext";
-import { useAuth } from "../../contexts/AuthContext";
+import { useApi } from "@/contexts/ApiContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { MessageSquare, Key, Zap, TrendingUp } from "lucide-react";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "./Dashboard.module.css";
 
 const Dashboard = () => {
@@ -59,7 +58,6 @@ const Dashboard = () => {
         </Link>
       </div>
 
-      {/* Stats Grid */}
       <div className={styles.statsGrid}>
         <StatCard
           title="Total Submissions"
@@ -89,7 +87,6 @@ const Dashboard = () => {
         />
       </div>
 
-      {/* Quick Actions */}
       <div className={styles.actionsGrid}>
         <Link to="/api-keys" className={styles.actionCard}>
           <Key className={`${styles.actionIcon} ${styles.blue}`} />
@@ -114,7 +111,6 @@ const Dashboard = () => {
         </Link>
       </div>
 
-      {/* Recent Messages */}
       <div className="card">
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Recent Submissions</h2>

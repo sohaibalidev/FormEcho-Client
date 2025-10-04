@@ -1,7 +1,5 @@
-// src/pages/Landing/index.jsx
-import React from "react";
-import { Link } from "react-router-dom";
 import { Check, Zap, Shield, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import styles from "./Landing.module.css";
 
 const Landing = () => {
@@ -63,7 +61,6 @@ const Landing = () => {
 
   return (
     <div className={styles.container}>
-      {/* Header */}
       <header className={styles.header}>
         <div className="container">
           <div className={styles.headerContent}>
@@ -89,7 +86,6 @@ const Landing = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
@@ -109,7 +105,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className={styles.features}>
         <div className="container">
           <div className={styles.sectionHeader}>
@@ -135,7 +130,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
       <section id="pricing" className={styles.pricing}>
         <div className="container">
           <div className={styles.sectionHeader}>
@@ -187,7 +181,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className={styles.cta}>
         <div className="container">
           <div className={styles.ctaContent}>
@@ -203,7 +196,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.footerContent}>
