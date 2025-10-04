@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { Sun, Moon } from "lucide-react";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { useTheme } from "@/contexts/ThemeContext";
+import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
+import { AuthHeader } from "./components/AuthHeader/AuthHeader";
+import { AuthCard } from "./components/AuthCard/AuthCard";
 import styles from "./Auth.module.css";
 
 const loadGoogleScript = () => {
@@ -27,25 +29,9 @@ const Auth = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const googleButtonRef = useRef(null);
   const { loginWithGoogle, error, setError } = useAuth();
-  const [isDarkMode, setIsDarkMode] = useState(
-    JSON.parse(localStorage.getItem("is-dark"))
-  );
+  const { isDarkMode } = useTheme();
 
   const navigate = useNavigate();
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-
-    localStorage.setItem("is-dark", !isDarkMode);
-  };
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     const initGoogle = async () => {
@@ -110,96 +96,18 @@ const Auth = () => {
 
   return (
     <div className={`${styles.container} ${isDarkMode ? styles.dark : ""}`}>
-      <button
-        className={styles.themeToggle}
-        onClick={toggleTheme}
-        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        {isDarkMode ? (
-          <Sun size={20} className={styles.themeIcon} />
-        ) : (
-          <Moon size={20} className={styles.themeIcon} />
-        )}
-      </button>
+      <ThemeToggle />
 
-      <div className={styles.header}>
-        <Link to={"/"}>
-          <div className={styles.logo}>
-            <img
-              src="/favicon.ico"
-              alt="FormEcho"
-              className={styles.logoImage}
-            />
-          </div>
-        </Link>
-        <h1 className={styles.title}>Welcome to FormEcho</h1>
-        <p className={styles.subtitle}>
-          Streamline your form submissions with ease
-        </p>
-      </div>
+      <AuthHeader isDarkMode={isDarkMode} />
 
-      <div className={styles.formContainer}>
-        <div className={styles.card}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.cardTitle}>Sign In</h2>
-            <p className={styles.cardSubtitle}>
-              Continue with your Google account
-            </p>
-          </div>
-
-          {error && (
-            <div className={styles.error}>
-              <div className={styles.errorContent}>
-                <span>{error}</span>
-                {error.includes("Failed to load") && (
-                  <button onClick={handleRetry} className={styles.retryButton}>
-                    Retry
-                  </button>
-                )}
-              </div>
-            </div>
-          )}
-
-          <div className={styles.form}>
-            <div ref={googleButtonRef} className={styles.googleButtonContainer}>
-              {(!scriptLoaded || isLoading) && (
-                <div className={styles.loadingState}>
-                  <LoadingSpinner size="sm" />
-                  <span className={styles.loadingText}>
-                    {!scriptLoaded ? "Loading..." : "Signing in..."}
-                  </span>
-                </div>
-              )}
-            </div>
-
-            <div className={styles.divider}>
-              <span className={styles.dividerText}>or</span>
-            </div>
-
-            <div className={styles.alternativeOptions}>
-              <p className={styles.alternativeText}>
-                Having trouble?{" "}
-                <a href="#contact-support" className={styles.supportLink}>
-                  Contact support
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.footer}>
-            <p className={styles.footerText}>
-              By continuing, you agree to our{" "}
-              <a href="#terms" className={styles.footerLink}>
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a href="#privacy" className={styles.footerLink}>
-                Privacy Policy
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <AuthCard
+        isDarkMode={isDarkMode}
+        error={error}
+        onRetry={handleRetry}
+        scriptLoaded={scriptLoaded}
+        isLoading={isLoading}
+        googleButtonRef={googleButtonRef}
+      />
     </div>
   );
 };

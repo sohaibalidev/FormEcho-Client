@@ -1,0 +1,54 @@
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.actionCard {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.actionCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.actionIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.actionIcon.blue {
+  color: var(--primary-600);
+}
+
+.actionIcon.green {
+  color: var(--green-600);
+}
+
+.actionIcon.purple {
+  color: var(--purple-600);
+}
+
+.actionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.actionDescription {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .actionsGrid {
+    grid-template-columns: 1fr;
+  }
+}

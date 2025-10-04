@@ -1,0 +1,95 @@
+.messageCard {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.messageCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.messageName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.messageEmail {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+.messageDate {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.dateIcon {
+  margin-right: 0.25rem;
+}
+
+.messageBody {
+  margin-bottom: 1rem;
+}
+
+.messageText {
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.formData {
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.formDataTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.formDataGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.formDataItem {
+  display: flex;
+  font-size: 0.875rem;
+}
+
+.formDataKey {
+  font-weight: 500;
+  color: var(--gray-600);
+  margin-right: 0.5rem;
+}
+
+.formDataValue {
+  color: var(--gray-900);
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .messageHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .formDataGrid {
+    grid-template-columns: 1fr;
+  }
+}

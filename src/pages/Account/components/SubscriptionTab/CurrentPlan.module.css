@@ -1,0 +1,66 @@
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+}
+
+.currentPlan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+.planHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.planIcon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-600);
+}
+
+.planName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.planDescription {
+  color: var(--gray-600);
+}
+
+.planPrice {
+  text-align: right;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gray-900);
+}
+
+.pricePeriod {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .currentPlan {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .planPrice {
+    text-align: left;
+  }
+}

@@ -1,5 +1,4 @@
-// src/pages/Admin/index.jsx
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { adminService } from "../../services/adminService";
 import {
   Users,
@@ -37,7 +36,7 @@ const Admin = () => {
   const handleUpdateStatus = async (userId, updates) => {
     try {
       await adminService.updateUserStatus(userId, updates);
-      loadUsers(); // Reload to get updated data
+      loadUsers(); 
     } catch (error) {
       console.error("Failed to update user:", error);
     }
@@ -92,7 +91,6 @@ const Admin = () => {
         <p className={styles.subtitle}>Manage all users and subscriptions</p>
       </div>
 
-      {/* Stats */}
       <div className={styles.statsGrid}>
         <div className="card">
           <div className={styles.statItem}>
@@ -141,7 +139,6 @@ const Admin = () => {
         </div>
       </div>
 
-      {/* Users Table */}
       <div className="card">
         <div className={styles.tableHeader}>
           <h2 className={styles.tableTitle}>All Users</h2>

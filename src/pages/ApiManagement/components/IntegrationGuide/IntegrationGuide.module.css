@@ -1,0 +1,38 @@
+.integrationGuide {
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.guideTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-900);
+  margin-bottom: 1rem;
+}
+
+.guideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guideText {
+  color: var(--primary-800);
+}
+
+.codeBlock {
+  background-color: var(--primary-900);
+  color: var(--primary-100);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+.guideNote {
+  color: var(--primary-800);
+  font-size: 0.875rem;
+}

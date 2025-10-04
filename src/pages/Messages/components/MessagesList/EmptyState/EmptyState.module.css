@@ -1,0 +1,21 @@
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+}
+
+.emptyIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--gray-400);
+  margin: 0 auto 1rem;
+}
+
+.emptyText {
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.emptyDescription {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}

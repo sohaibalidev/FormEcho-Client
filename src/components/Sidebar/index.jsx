@@ -1,4 +1,3 @@
-// src/components/Sidebar/index.jsx
 import { Link, useLocation } from "react-router-dom";
 import {
   Home,
@@ -8,11 +7,15 @@ import {
   Users,
   LogOut,
   X,
+  Sun,
+  Moon,
 } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = ({ isOpen, onClose, user, onLogout }) => {
   const location = useLocation();
+  const { isDarkMode, toggleTheme } = useTheme();
 
   const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: Home },
@@ -64,10 +67,30 @@ const Sidebar = ({ isOpen, onClose, user, onLogout }) => {
           </nav>
 
           <div className={styles.sidebarFooter}>
+            <div className={styles.themeToggleWrapper}>
+              <button
+                onClick={toggleTheme}
+                className={styles.themeToggle}
+                aria-label={
+                  isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                }
+              >
+                {isDarkMode ? (
+                  <Sun size={18} className={styles.themeIcon} />
+                ) : (
+                  <Moon size={18} className={styles.themeIcon} />
+                )}
+                <span className={styles.themeText}>
+                  {isDarkMode ? "Light Mode" : "Dark Mode"}
+                </span>
+              </button>
+            </div>
+
             <div className={styles.userInfo}>
               <p className={styles.userName}>{user?.name}</p>
               <p className={styles.userTier}>{user?.tier} Plan</p>
             </div>
+
             <button onClick={onLogout} className={styles.logoutButton}>
               <LogOut size={16} className={styles.logoutIcon} />
               Sign Out

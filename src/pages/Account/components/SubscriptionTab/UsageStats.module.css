@@ -1,0 +1,33 @@
+.usageStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.usageCard {
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  border: 1px solid var(--gray-300);
+}
+
+.usageLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.usageValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.usageUnit {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}

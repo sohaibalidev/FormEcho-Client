@@ -1,8 +1,8 @@
-/* src/pages/SuperAdmin/SuperAdmin.module.css */
 .container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin: 2rem;
 }
 
 .header {
@@ -100,10 +100,6 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-bottom: 1px solid var(--gray-200);
-}
-
-.tableBody {
-  background-color: white;
 }
 
 .tableRow {

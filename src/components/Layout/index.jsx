@@ -5,7 +5,7 @@ import Sidebar from "../Sidebar";
 import Header from "../Header";
 import styles from "./Layout.module.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, requireAdmin: noSidebar }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -22,6 +22,8 @@ const Layout = ({ children }) => {
   const handleMenuClick = () => {
     setSidebarOpen(true);
   };
+
+  if (noSidebar) return children;
 
   return (
     <div className={styles.container}>

@@ -1,0 +1,9 @@
+.messagesContent {
+  padding: 1.5rem;
+}
+
+.messagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

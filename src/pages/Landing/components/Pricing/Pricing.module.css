@@ -1,0 +1,150 @@
+.pricing {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.sectionDescription {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.pricingCard {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricingCardFeatured {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 2px var(--primary-500);
+  position: relative;
+}
+
+.pricingHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricingTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.pricingAmount {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.pricingPeriod {
+  font-size: 1rem;
+  color: var(--gray-600);
+  font-weight: normal;
+}
+
+.pricingDescription {
+  color: var(--gray-600);
+}
+
+.featuresList {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.featureCheck {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--green-500);
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.featureText {
+  color: var(--gray-600);
+}
+
+.pricingButton {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.pricingButtonPrimary {
+  background-color: var(--primary-600);
+  color: white;
+}
+
+.pricingButtonPrimary:hover {
+  background-color: var(--primary-700);
+}
+
+.pricingButtonSecondary {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+  border: 1px solid var(--gray-300);
+}
+
+.pricingButtonSecondary:hover {
+  background-color: var(--gray-200);
+}
+
+@media (max-width: 767px) {
+  .pricing {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.875rem;
+  }
+
+  .pricingCardFeatured {
+    order: -1;
+  }
+}
+
+@media (min-width: 768px) {
+  .pricingGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

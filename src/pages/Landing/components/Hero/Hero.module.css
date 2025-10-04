@@ -1,0 +1,100 @@
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-50) 0%,
+    var(--purple-100) 100%
+  );
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  background-color: var(--primary-600);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.primaryButton:hover {
+  background-color: var(--primary-700);
+}
+
+.secondaryButton {
+  border: 1px solid var(--gray-300);
+  color: var(--gray-700);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+  background: white;
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background-color: var(--gray-50);
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
