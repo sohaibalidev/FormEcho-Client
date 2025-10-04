@@ -1,0 +1,289 @@
+/* src/pages/ApiManagement/ApiManagement.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--gray-600);
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.generationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tierSelection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tierLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.tiersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tierCard {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.tierCard:hover {
+  border-color: var(--gray-300);
+}
+
+.tierCardSelected {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.tierHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tierIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.tierIcon.gray {
+  color: var(--gray-600);
+}
+
+.tierIcon.blue {
+  color: var(--primary-600);
+}
+
+.tierIcon.purple {
+  color: var(--purple-600);
+}
+
+.tierName {
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.tierLimit {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.generateButton {
+  align-self: flex-start;
+}
+
+.sectionHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.keysSection {
+  padding: 1.5rem;
+}
+
+.keysList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.keyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+}
+
+.keyInfo {
+  flex: 1;
+}
+
+.keyMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.tierBadge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.tierBadge.free {
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.tierBadge.pro {
+  background-color: var(--primary-100);
+  color: var(--primary-800);
+}
+
+.tierBadge.enterprise {
+  background-color: var(--purple-100);
+  color: var(--purple-800);
+}
+
+.keyDate {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.keyValue {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.keyCode {
+  background-color: var(--gray-100);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+.copyButton {
+  padding: 0.25rem;
+  color: var(--gray-400);
+  background: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.copyButton:hover {
+  color: var(--gray-600);
+}
+
+.revokeButton {
+  padding: 0.5rem;
+  color: var(--red-600);
+  background: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.revokeButton:hover {
+  background-color: var(--red-50);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+}
+
+.emptyIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--gray-400);
+  margin: 0 auto 1rem;
+}
+
+.emptyText {
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.emptyDescription {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+.integrationGuide {
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.guideTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-900);
+  margin-bottom: 1rem;
+}
+
+.guideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guideText {
+  color: var(--primary-800);
+}
+
+.codeBlock {
+  background-color: var(--primary-900);
+  color: var(--primary-100);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+.guideNote {
+  color: var(--primary-800);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .tiersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .keyItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .keyValue {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

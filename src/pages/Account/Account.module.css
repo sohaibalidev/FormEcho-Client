@@ -1,0 +1,464 @@
+/* src/pages/Account/Account.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--gray-600);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5rem;
+}
+
+.sidebar {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  height: fit-content;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebarButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: var(--gray-600);
+  text-decoration: none;
+}
+
+.sidebarButton:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.sidebarButtonActive {
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  border: 1px solid var(--primary-200);
+}
+
+.sidebarIcon {
+  margin-right: 0.75rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+}
+
+.profileContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subscriptionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.currentPlan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+.planHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.planIcon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-600);
+}
+
+.planName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.planDescription {
+  color: var(--gray-600);
+}
+
+.planPrice {
+  text-align: right;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gray-900);
+}
+
+.pricePeriod {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+.usageStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.usageCard {
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+}
+
+.usageLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.usageValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.usageUnit {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.upgradeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.upgradeCard {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.upgradeCardCurrent {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.upgradeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.upgradeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary-600);
+}
+
+.upgradeName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.upgradePrice {
+  margin-bottom: 1rem;
+}
+
+.upgradeDescription {
+  color: var(--gray-600);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.upgradeFeatures {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.upgradeFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.featureDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--green-500);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.upgradeButton {
+  width: 100%;
+}
+
+.notificationsContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.notificationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.notificationInfo {
+  flex: 1;
+}
+
+.notificationTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.notificationDescription {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.toggleInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray-300);
+  transition: 0.4s;
+  border-radius: 2rem;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 1.125rem;
+  width: 1.125rem;
+  left: 0.1875rem;
+  bottom: 0.1875rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggleInput:checked + .toggleSlider {
+  background-color: var(--primary-600);
+}
+
+.toggleInput:checked + .toggleSlider:before {
+  transform: translateX(1.5rem);
+}
+
+.notificationActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.securityContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.securitySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.securitySectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.securityDescription {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+.passwordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.securityDivider {
+  height: 1px;
+  background-color: var(--gray-200);
+}
+
+.dangerTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--red-700);
+}
+
+.dangerItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dangerInfo {
+  flex: 1;
+}
+
+.dangerName {
+  font-weight: 500;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.dangerDescription {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .main {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .currentPlan {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .planPrice {
+    text-align: left;
+  }
+
+  .upgradeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .notificationItem {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dangerItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

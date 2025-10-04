@@ -1,0 +1,314 @@
+/* src/pages/SuperAdmin/SuperAdmin.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--gray-600);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.statIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.statIcon.blue {
+  color: var(--primary-600);
+}
+
+.statIcon.purple {
+  color: var(--purple-600);
+}
+
+.statIcon.green {
+  color: var(--green-600);
+}
+
+.statInfo {
+  flex: 1;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gray-900);
+}
+
+.tableHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.tableTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  background-color: var(--gray-50);
+}
+
+.tableHeaderCell {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.tableBody {
+  background-color: white;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--gray-200);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.tableRow:hover {
+  background-color: var(--gray-50);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  vertical-align: top;
+}
+
+.userInfo {
+  min-width: 200px;
+}
+
+.userName {
+  font-weight: 500;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.userEmail {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+.tierInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tierIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.tierBadge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.tierFree {
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.tierPro {
+  background-color: var(--primary-100);
+  color: var(--primary-800);
+}
+
+.tierEnterprise {
+  background-color: var(--purple-100);
+  color: var(--purple-800);
+}
+
+.usageInfo {
+  min-width: 120px;
+}
+
+.usageTotal {
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.usageMonthly {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+.subscriptionInfo {
+  min-width: 150px;
+}
+
+.subscriptionDate {
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.paymentDate {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+.statusInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusIconPaid {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--green-500);
+}
+
+.statusIconUnpaid {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--red-500);
+}
+
+.statusIconSuspended {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--red-500);
+}
+
+.statusPaid {
+  font-weight: 500;
+  color: var(--green-600);
+}
+
+.statusUnpaid {
+  font-weight: 500;
+  color: var(--red-600);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  padding: 0.375rem 0.75rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.actionButtonPaid {
+  background-color: var(--green-100);
+  color: var(--green-700);
+}
+
+.actionButtonPaid:hover {
+  background-color: var(--green-200);
+}
+
+.actionButtonUnpaid {
+  background-color: var(--red-100);
+  color: var(--red-700);
+}
+
+.actionButtonUnpaid:hover {
+  background-color: var(--red-200);
+}
+
+.actionButtonSuspend {
+  background-color: var(--red-100);
+  color: var(--red-700);
+}
+
+.actionButtonSuspend:hover {
+  background-color: var(--red-200);
+}
+
+.actionButtonResume {
+  background-color: var(--green-100);
+  color: var(--green-700);
+}
+
+.actionButtonResume:hover {
+  background-color: var(--green-200);
+}
+
+@media (max-width: 1024px) {
+  .tableContainer {
+    font-size: 0.75rem;
+  }
+
+  .tableHeaderCell,
+  .tableCell {
+    padding: 0.75rem 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table {
+    min-width: 800px;
+  }
+}
