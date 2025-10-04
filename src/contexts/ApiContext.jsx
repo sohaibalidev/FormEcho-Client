@@ -17,33 +17,63 @@ export const ApiProvider = ({ children }) => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const generateApiKey = async (tier = "free") => {
+  const getStats = async () => {
     setLoading(true);
     try {
-      const newKey = await apiService.generateApiKey(tier);
-      setApiKeys((prev) => [...prev, newKey]);
-      return newKey;
+      const res = await apiService.getStats();
+      if (res.success) setStats(res.data);
+      return res.data;
     } finally {
       setLoading(false);
     }
   };
 
-  const revokeApiKey = async (keyId) => {
+  const fetchApiKeys = async () => {
     setLoading(true);
     try {
-      await apiService.revokeApiKey(keyId);
-      setApiKeys((prev) => prev.filter((key) => key._id !== keyId));
+      const res = await apiService.getApiKeys();
+      if (res.success) setApiKeys(res.data);
+      return res.data;
     } finally {
       setLoading(false);
     }
   };
 
-  const getApiKeys = async () => {
+  const createApiKey = async ({ name }) => {
     setLoading(true);
     try {
-      const keys = await apiService.getApiKeys();
-      setApiKeys(keys);
-      return keys;
+      const res = await apiService.createApiKey({ name });
+      if (res.success) {
+        setApiKeys((prev) => [...prev, res.data]);
+        return res.data;
+      }
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const updateApiKey = async (updates) => {
+    setLoading(true);
+    try {
+      const res = await apiService.updateApiKey(updates);
+      if (res.success) {
+        setApiKeys((prev) =>
+          prev.map((k) => (k._id === res.data._id ? res.data : k))
+        );
+        return res.data;
+      }
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getApiKeyUsage = async (id) => {
+    setLoading(true);
+    try {
+      const res = await apiService.getApiKeyUsage(id);
+      return res.success ? res.data : null;
     } finally {
       setLoading(false);
     }
@@ -60,27 +90,17 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
-  const getStats = async () => {
-    setLoading(true);
-    try {
-      const statsData = await apiService.getStats();
-      setStats(statsData);
-      return statsData;
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const value = {
-    apiKeys,
-    messages,
     stats,
+    apiKeys,
     loading,
-    generateApiKey,
-    revokeApiKey,
-    getApiKeys,
-    getMessages,
+    messages,
     getStats,
+    fetchApiKeys,
+    createApiKey,
+    updateApiKey,
+    getApiKeyUsage,
+    getMessages,
   };
 
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;

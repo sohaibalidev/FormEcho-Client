@@ -61,7 +61,7 @@ const PricingCard = ({ tier, isFeatured }) => (
       ))}
     </ul>
     <Link
-      to="/register"
+      to="/auth"
       className={`${styles.pricingButton} ${
         isFeatured ? styles.pricingButtonPrimary : styles.pricingButtonSecondary
       }`}

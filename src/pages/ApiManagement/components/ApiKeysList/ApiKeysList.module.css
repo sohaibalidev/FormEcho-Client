@@ -7,7 +7,15 @@
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--gray-900);
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.apiKeyName {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--primary-900);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
 }
 
 .keysSection {
@@ -38,28 +46,6 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
-}
-
-.tierBadge {
-  padding: 0.25rem 0.5rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.tierBadge.free {
-  background-color: var(--gray-100);
-  color: var(--gray-800);
-}
-
-.tierBadge.pro {
-  background-color: var(--primary-100);
-  color: var(--primary-800);
-}
-
-.tierBadge.enterprise {
-  background-color: var(--purple-100);
-  color: var(--purple-800);
 }
 
 .keyDate {

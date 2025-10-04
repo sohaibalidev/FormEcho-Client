@@ -14,11 +14,11 @@ import styles from "./Account.module.css";
 
 const Account = () => {
   const { user } = useAuth();
-  const { getStats } = useApi();
+  const { fetchApiKeys } = useApi();
   const [activeTab, setActiveTab] = useState("profile");
 
   useEffect(() => {
-    getStats();
+    fetchApiKeys();
   }, []);
 
   const renderActiveTab = () => {

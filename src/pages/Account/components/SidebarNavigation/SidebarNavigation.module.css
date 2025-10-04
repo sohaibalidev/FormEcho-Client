@@ -1,7 +1,7 @@
 .sidebarNav {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .sidebarButton {
@@ -9,11 +9,11 @@
   align-items: center;
   width: 100%;
   padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border: none;
   border-radius: var(--border-radius);
-  background: none;
+  background: transparent;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   color: var(--gray-600);
@@ -32,5 +32,9 @@
 }
 
 .sidebarIcon {
+  flex-shrink: 0;
   margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

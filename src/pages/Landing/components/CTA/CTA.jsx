@@ -11,7 +11,7 @@ export const CTA = () => {
             Join thousands of developers who trust FormEcho for their form
             submission needs.
           </p>
-          <Link to="/register" className={styles.ctaButton}>
+          <Link to="/auth" className={styles.ctaButton}>
             Create Your Free Account
           </Link>
         </div>

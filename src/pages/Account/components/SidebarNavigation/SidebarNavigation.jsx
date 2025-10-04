@@ -20,7 +20,7 @@ export const SidebarNavigation = ({ activeTab, onTabChange }) => (
             activeTab === item.id ? styles.sidebarButtonActive : ""
           }`}
         >
-          <Icon size={18} className={styles.sidebarIcon} />
+          <Icon size={18} strokeWidth={2} className={styles.sidebarIcon} />
           {item.label}
         </button>
       );

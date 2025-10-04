@@ -1,75 +1,60 @@
-import { Key, Zap, Crown } from "lucide-react";
+import { useState } from "react";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import styles from "./KeyGenerationSection.module.css";
 
-const tiers = [
-  {
-    id: "free",
-    name: "Free",
-    limit: "100 submissions/month",
-    icon: Key,
-    color: "gray",
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    limit: "10,000 submissions/month",
-    icon: Zap,
-    color: "blue",
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    limit: "Unlimited submissions",
-    icon: Crown,
-    color: "purple",
-  },
-];
+export const KeyGenerationSection = ({ onGenerateKey, isGenerating }) => {
+  const [keyName, setKeyName] = useState();
 
-export const KeyGenerationSection = ({
-  selectedTier,
-  onTierChange,
-  onGenerateKey,
-  isGenerating,
-}) => {
+  const handleGenerate = () => {
+    onGenerateKey(keyName);
+    setKeyName("");
+  };
+
   return (
     <div className="card">
       <h2 className={styles.sectionTitle}>Generate New API Key</h2>
 
       <div className={styles.generationSection}>
-        <div className={styles.tierSelection}>
-          <label className={styles.tierLabel}>Select Tier</label>
-          <div className={styles.tiersGrid}>
-            {tiers.map((tier) => {
-              const Icon = tier.icon;
-              return (
-                <div
-                  key={tier.id}
-                  className={`${styles.tierCard} ${
-                    selectedTier === tier.id ? styles.tierCardSelected : ""
-                  }`}
-                  onClick={() => onTierChange(tier.id)}
-                >
-                  <div className={styles.tierHeader}>
-                    <Icon
-                      className={`${styles.tierIcon} ${styles[tier.color]}`}
-                    />
-                    <span className={styles.tierName}>{tier.name}</span>
-                  </div>
-                  <p className={styles.tierLimit}>{tier.limit}</p>
-                </div>
-              );
-            })}
-          </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="key-name" className={styles.label}>
+            Key Name (Optional)
+          </label>
+          <input
+            id="key-name"
+            type="text"
+            placeholder="e.g., Production Key, Development Key"
+            value={keyName}
+            onChange={(e) => setKeyName(e.target.value)}
+            className={styles.input}
+          />
+          <p className={styles.helperText}>
+            Give your key a descriptive name to identify its purpose
+          </p>
         </div>
 
-        <button
-          onClick={onGenerateKey}
-          disabled={isGenerating}
-          className={`btn btn-primary ${styles.generateButton}`}
-        >
-          {isGenerating ? <LoadingSpinner size="sm" /> : "Generate API Key"}
-        </button>
+        <div className={styles.sectionFooter}>
+          <div className={styles.note}>
+            <p>
+              <strong>Note:</strong> API keys will inherit your account's tier
+              limits automatically.
+            </p>
+          </div>
+
+          <button
+            onClick={handleGenerate}
+            disabled={isGenerating}
+            className={styles.generateButton}
+          >
+            {isGenerating ? (
+              <>
+                <LoadingSpinner size="sm" />
+                Generating...
+              </>
+            ) : (
+              "Generate API Key"
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

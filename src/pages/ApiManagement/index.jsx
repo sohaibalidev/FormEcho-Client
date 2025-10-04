@@ -6,19 +6,18 @@ import { IntegrationGuide } from "./components/IntegrationGuide/IntegrationGuide
 import styles from "./ApiManagement.module.css";
 
 const ApiManagement = () => {
-  const { apiKeys, generateApiKey, revokeApiKey, getApiKeys, loading } =
+  const { apiKeys, createApiKey, updateApiKey, fetchApiKeys, loading } =
     useApi();
-  const [selectedTier, setSelectedTier] = useState("free");
   const [isGenerating, setIsGenerating] = useState(false);
 
   useEffect(() => {
-    getApiKeys();
+    fetchApiKeys();
   }, []);
 
-  const handleGenerateKey = async () => {
+  const handleGenerateKey = async (keyName) => {
     setIsGenerating(true);
     try {
-      await generateApiKey(selectedTier);
+      await createApiKey({ name: keyName });
     } finally {
       setIsGenerating(false);
     }
@@ -26,12 +25,11 @@ const ApiManagement = () => {
 
   const handleCopyKey = (key) => {
     navigator.clipboard.writeText(key);
-    // You could add a toast notification here
   };
 
   const handleRevokeKey = async (keyId) => {
     if (window.confirm("Are you sure you want to revoke this API key?")) {
-      await revokeApiKey(keyId);
+      await updateApiKey({ id: keyId, action: "revoke" });
     }
   };
 
@@ -45,8 +43,6 @@ const ApiManagement = () => {
       </div>
 
       <KeyGenerationSection
-        selectedTier={selectedTier}
-        onTierChange={setSelectedTier}
         onGenerateKey={handleGenerateKey}
         isGenerating={isGenerating}
       />

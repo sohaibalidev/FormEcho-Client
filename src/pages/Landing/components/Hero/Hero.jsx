@@ -13,7 +13,7 @@ export const Hero = () => {
             receiving submissions.
           </p>
           <div className={styles.heroActions}>
-            <Link to="/register" className={styles.primaryButton}>
+            <Link to="/auth" className={styles.primaryButton}>
               Start Free Trial
             </Link>
             <button className={styles.secondaryButton}>View Demo</button>

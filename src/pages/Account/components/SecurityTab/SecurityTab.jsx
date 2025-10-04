@@ -31,7 +31,7 @@ const DangerZoneSection = () => (
           Permanently delete your account and all data
         </p>
       </div>
-      <button className="btn btn-danger">Delete Account</button>
+      <button className={`btn btn-danger ${styles.btnRed}`}>Delete Account</button>
     </div>
   </div>
 );

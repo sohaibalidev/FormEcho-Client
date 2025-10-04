@@ -1,88 +1,106 @@
 .sectionTitle {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--gray-900);
-  padding: 1.5rem;
-  padding-bottom: 0;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  padding: 1.5rem 1.5rem 0;
 }
 
 .generationSection {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
 }
 
-.tierSelection {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+.formGroup {
+  margin-bottom: 0;
 }
 
-.tierLabel {
-  font-size: 0.875rem;
+.label {
+  display: block;
   font-weight: 500;
-  color: var(--gray-700);
-}
-
-.tiersGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.tierCard {
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  cursor: pointer;
-}
-
-.tierCardSelected {
-  border-color: var(--primary-500);
-}
-
-.tierHeader {
-  display: flex;
-  align-items: center;
   margin-bottom: 0.5rem;
+  color: #374151;
 }
 
-.tierIcon {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 0.5rem;
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  color: var(--primary);
+  font-size: 1rem;
+  background-color: transparent;
+  transition: border-color 0.15s ease-in-out;
+  border: 1px solid #3b82f6;
 }
 
-.tierIcon.gray {
-  color: var(--gray-600);
+.input:focus {
+  border: 1px solid #d1d5db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.tierIcon.blue {
-  color: var(--primary-600);
-}
-
-.tierIcon.purple {
-  color: var(--purple-600);
-}
-
-.tierName {
-  font-weight: 500;
-  color: var(--gray-900);
-}
-
-.tierLimit {
+.helperText {
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.sectionFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .generateButton {
-  align-self: flex-start;
-  max-height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  width: fit-content;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
 }
 
+.generateButton:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.generateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.note {
+  margin-top: 0;
+  padding: 0.75rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.note p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Remove unused tier styles completely */
 @media (max-width: 768px) {
-  .tiersGrid {
-    grid-template-columns: 1fr;
+  .sectionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 0;
+  }
+
+  .generationSection {
+    padding: 0 1rem 1rem;
+    gap: 1rem;
   }
 }

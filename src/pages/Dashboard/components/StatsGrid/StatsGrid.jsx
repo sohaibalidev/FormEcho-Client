@@ -20,7 +20,7 @@ export const StatsGrid = ({ stats, user }) => {
     <div className={styles.statsGrid}>
       <StatCard
         title="Total Submissions"
-        value={stats?.totalSubmissions || 0}
+        value={stats?.totalRequestsAllowed || 0}
         icon={MessageSquare}
         color="blue"
       />
@@ -39,7 +39,7 @@ export const StatsGrid = ({ stats, user }) => {
       <StatCard
         title="Plan"
         value={
-          user?.tier?.charAt(0).toUpperCase() + user?.tier?.slice(1) || "Free"
+          stats?.tier?.charAt(0).toUpperCase() + stats?.tier?.slice(1) || "Free"
         }
         icon={Zap}
         color="yellow"

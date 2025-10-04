@@ -45,10 +45,8 @@ export const ApiKeysList = ({ apiKeys, loading, onCopyKey, onRevokeKey }) => {
 const ApiKeyItem = ({ apiKey, onCopyKey, onRevokeKey }) => (
   <div className={styles.keyItem}>
     <div className={styles.keyInfo}>
+      <div className={styles.apiKeyName}>{apiKey.name}</div>
       <div className={styles.keyMeta}>
-        <span className={`${styles.tierBadge} ${styles[apiKey.tier]}`}>
-          {apiKey.tier.charAt(0).toUpperCase() + apiKey.tier.slice(1)}
-        </span>
         <span className={styles.keyDate}>
           Created {new Date(apiKey.createdAt).toLocaleDateString()}
         </span>

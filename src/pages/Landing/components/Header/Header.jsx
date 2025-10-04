@@ -17,11 +17,8 @@ export const Header = () => {
             <a href="#pricing" className={styles.navLink}>
               Pricing
             </a>
-            <Link to="/login" className={styles.navLink}>
+            <Link to="/auth" className={styles.navLink}>
               Sign In
-            </Link>
-            <Link to="/register" className={styles.ctaButton}>
-              Get Started
             </Link>
           </nav>
         </div>
